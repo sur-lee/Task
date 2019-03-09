@@ -1,0 +1,59 @@
+body{
+    background-color: #000;
+    color: white;
+    margin: 0px;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.topNavBar{
+    padding: 18px 16px;
+}
+.topNavBar a{
+    float: left;
+}
+.topNavBar nav{
+    float: right;
+}
+
+
+.topNavBar>nav>ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.topNavBar>nav>ul>li{
+    float: left;
+    margin: 0px 18px;
+}
+.topNavBar>nav>ul>li>a{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    padding: 5px 0px;
+    display: block;
+}
+.topNavBar>nav>ul>li>a:hover{
+    border-bottom: 3px solid #27A79A;
+}
+
+.topNavBar .logo{
+    font-family: "Berlin Sans FB Demi";
+    font-size: 30px;
+    padding: 1px 0px 1px 0px;
+}
+.topNavBar .logo .rs{
+    color: #27A79A;
+}
+.topNavBar .logo .card{
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 4px;
+}
