@@ -14,7 +14,14 @@ a{
 }
 
 .topNavBar{
-    padding: 18px 16px;
+    padding: 18px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+.topNavBar-inner{
+    padding: 0px 24px 0px 4px;
 }
 .topNavBar a{
     float: left;
@@ -24,16 +31,16 @@ a{
 }
 
 
-.topNavBar>nav>ul{
+.topNavBar nav>ul{
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.topNavBar>nav>ul>li{
+.topNavBar nav>ul>li{
     float: left;
     margin: 0px 18px;
 }
-.topNavBar>nav>ul>li>a{
+.topNavBar nav>ul>li>a{
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
     border-bottom: 3px solid transparent;
@@ -41,7 +48,7 @@ a{
     padding: 5px 0px;
     display: block;
 }
-.topNavBar>nav>ul>li>a:hover{
+.topNavBar nav>ul>li>a:hover{
     border-bottom: 3px solid #27A79A;
 }
 
@@ -56,4 +63,15 @@ a{
 .topNavBar .logo .card{
     color: rgba(255, 255, 255, 0.7);
     margin-left: 4px;
+}
+
+.banner{
+    background-image: url(./image/banner.jpg);
+    height:515px;
+    background-position: center center;
+    background-size: cover;
+}
+.banner .mask{
+    height: 515px;
+    background-color: rgba(11, 11, 16, 0.8);
 }
