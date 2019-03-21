@@ -103,7 +103,7 @@
                     Html 5 &amp; CSS 3
                 </h3>
                 <div class="progressBar">
-                    <div class="progress"></div>
+                    <div class="progress" style="width: 80%"></div>
                 </div>
             </li>
             <li>
@@ -111,7 +111,7 @@
                     JavaScript
                 </h3>
                 <div class="progressBar">
-                    <div class="progress"></div>
+                    <div class="progress" style="width: 50%"></div>
                 </div>
             </li> 
             <li>
@@ -119,7 +119,7 @@
                     jQuery
                 </h3>
                 <div class="progressBar">
-                    <div class="progress"></div>
+                    <div class="progress" style="width: 40%"></div>
                 </div>
             </li>
             <li>
@@ -127,7 +127,7 @@
                     Vue.JS
                 </h3>
                 <div class="progressBar">
-                    <div class="progress"></div>
+                    <div class="progress" style="width: 60%"></div>
                 </div>
             </li>
             <li>
@@ -135,7 +135,7 @@
                     React
                 </h3>
                 <div class="progressBar">
-                    <div class="progress"></div>
+                    <div class="progress" style="width: 30%"></div>
                 </div>
             </li>
             <li>
@@ -143,24 +143,44 @@
                     HTTP
                 </h3>
                 <div class="progressBar">
-                    <div class="progress"></div>
+                    <div class="progress" style="width: 55%"></div>
                 </div>
             </li>
         </ol>
     </section>
-    <section>
+    <section class="portfolio">
         <h2>作品集</h2>
         <nav>
-            <ol>
-                <li>所有</li>
-                <li>框架</li>
-                <li>原生JS&amp; CSS</li>
+            <ol class="clearfix">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">原生JS&amp; CSS</li>
             </ol>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
+            </div>
         </nav>
-        <div class="jobs">
-            <div class="big"></div>
-            <div class="small"></div>
-            <div class="small"></div>
+        <script>
+            portfolio1.onclick= function(){
+                portfolioBar.className = 'bar state-1'
+            }
+            portfolio2.onclick= function(){
+                portfolioBar.className = 'bar state-2'
+            }
+            portfolio3.onclick= function(){
+                portfolioBar.className = 'bar state-3'
+            }
+        </script>
+        <div class="works" style="height: 576px;">
+            <div class="big" style="top: 0; left: 0;">
+                <img src="./image/1.jpg" alt="">
+            </div>
+            <div class="small" style="top: 0; left: 624px;">
+                <img src="./image/2.jpg" alt="">
+            </div>
+            <div class="small" style="top: 298px; left: 624px;">
+                <img src="./image/3.jpg" alt="">
+            </div>
         </div>
     </section>
 </body>
