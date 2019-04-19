@@ -1,0 +1,110 @@
+*{
+    margin:0; padding:0;
+}
+body{
+    min-width: 1000px;
+    background: #f8f8f8;
+}
+.clearfix::after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+} /*IE 6兼容*/
+.nav{
+    background: #ddd;
+    margin: 0 auto;
+    min-width: 600px;
+}
+.logo{
+    width: 100px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    float: left;
+}
+.navContent{
+float: right;
+line-height: 24px;
+padding: 12px 0;
+}
+.navItem{
+    float: left;
+    margin: 0 0 0 60px;
+}
+
+.banner{
+    width: 1200px;
+    height: 320px;
+    background: #999;
+    margin: 0 auto;
+}
+
+.part1{
+    width: 1200px;
+    margin: 16px auto;
+}
+.picWraper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4px;
+}
+.picture{
+    background: rgb(254, 231, 231);
+    width: calc(25% - 8px);
+    height: 220px;
+    margin: 4px;
+
+}
+
+/* .art{
+    width: 1200px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.artLeft{
+    background: rgb(246, 230, 255);
+    width: calc(33.333333% - 8px);
+    height: 240px;
+    line-height: 240px;
+    text-align: center;
+}
+.artRight{
+    background: rgb(230, 230, 255);
+    width: 66.666666%;
+    height: 240px;
+    line-height: 240px;
+    text-align: center;
+
+} */ /*flex布局*/
+.art{
+    width: 1200px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.artLeft{
+    float: left;
+    background: rgb(246, 230, 255);
+    width: calc(33.33333333% - 8px);
+    height: 240px;
+    margin-right: 8px;
+    line-height: 240px;
+    text-align: center;
+}
+.artRight{
+    float: left;
+    background: rgb(230, 230, 255);
+    width: 66.66666666%;
+    height: 240px;
+    line-height: 240px;
+    text-align: center;
+}
