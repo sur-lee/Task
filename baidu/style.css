@@ -25,9 +25,16 @@ body{
 .wrapper{
     /* border: 1px solid red; */
     display: flex;
+    position: relative;
 }
 .suggestion{
+    position: absolute;
+    top: 100%;
+    left: 0;
     display: none;
+}
+.suggestion.active{
+    display: block;
 }
 .inputWrapper{
     position: relative;
