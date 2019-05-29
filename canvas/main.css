@@ -5,8 +5,17 @@ body{
     background: green;
     position: relative;
 }
-button{
+.actions{
     position: fixed;
     bottom: 0;
     left: 0;
+}
+.actions > #brush{
+    display: none;
+}
+.actions.x > #brush{
+    display: inline-block;
+}
+.actions.x > #eraser{
+    display: none;
 }
