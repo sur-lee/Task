@@ -1,21 +1,30 @@
 body{
     margin: 0;
 }
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
 #huabu{
-    background: green;
+    /* background: green; */
     position: relative;
 }
 .actions{
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
+    padding: 16px;
 }
-.actions > #brush{
-    display: none;
+.actions svg{
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.3s;
+    margin: 0 6px;
 }
-.actions.x > #brush{
-    display: inline-block;
-}
-.actions.x > #eraser{
-    display: none;
+.actions svg.active{
+    fill: brown;
+    transform: scale(1.2);
+
 }
