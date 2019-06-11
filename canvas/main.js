@@ -1,5 +1,7 @@
+
 var yyy = document.getElementById('huabu');
 var context = yyy.getContext('2d');
+var lineWidth = 5
 //设置尺寸
 autoSetCanvasSize(yyy)
 
@@ -17,6 +19,56 @@ eraser.onclick =function(){
     eraser.classList.add('active')
     pen.classList.remove('active')
 }
+clear.onclick = function(){
+    context.clearRect(0, 0, yyy.width, yyy.height);
+}
+download.onclick = function(){
+    var url = yyy.toDataURL("image/png")
+    console.log(url)
+    var a = document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = 'picture'
+    a.target = "_blank"
+    a.click()
+}
+
+black.onclick = function(){
+    context.strokeStyle = 'black'
+    black.classList.add('active')
+    red.classList.remove('active')
+    yellowgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+red.onclick = function(){
+    context.strokeStyle = 'red'
+    black.classList.remove('active')
+    red.classList.add('active')
+    yellowgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+yellowgreen.onclick = function(){
+    context.strokeStyle = 'yellowgreen'
+    black.classList.remove('active')
+    red.classList.remove('active')
+    yellowgreen.classList.add('active')
+    blue.classList.remove('active')
+}
+blue.onclick = function(){
+    context.strokeStyle = 'blue'
+    black.classList.remove('active')
+    red.classList.remove('active')
+    yellowgreen.classList.remove('active')
+    blue.classList.add('active')
+}
+
+thin.onclick = function(){
+    lineWidth = 5
+}
+thick.onclick = function(){
+    lineWidth = 8
+}
+
 
 /****/
 function listenToUser(canvas) {
@@ -36,7 +88,7 @@ function listenToUser(canvas) {
             } else {
                 using = true
                 lastPoint = {"x":x, "y":y}
-                drawCircle(x,y,3)
+                //drawCircle(x,y,3)
             }            
         }
         canvas.ontouchmove = function(aaa){
@@ -49,7 +101,7 @@ function listenToUser(canvas) {
                 context.clearRect(x-5,y-5,10,10)
             } else {          
                     var newPoint = {"x":x, "y":y}
-                    drawCircle(x,y,3)
+                    //drawCircle(x,y,3)
                     drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
                     lastPoint = newPoint
                 }
@@ -70,7 +122,7 @@ function listenToUser(canvas) {
             } else {
                 using = true
                 lastPoint = {"x":x, "y":y}
-                drawCircle(x,y,3)
+                //drawCircle(x,y,3)
             }
             
         }
@@ -85,7 +137,7 @@ function listenToUser(canvas) {
                 context.clearRect(x-5,y-5,10,10)
             } else {          
                     var newPoint = {"x":x, "y":y}
-                    drawCircle(x,y,3)
+                    //drawCircle(x,y,3)
                     drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
                     lastPoint = newPoint
                 }
@@ -114,16 +166,16 @@ function autoSetCanvasSize(canvas){
 
 function drawCircle(x,y,radius){
     context.beginPath()
-    context.fillStyle = 'black'
+    //context.fillStyle = 'black'
     context.arc(x,y,radius,0,Math.PI*2);
     context.fill()
 }
 function drawLine(x1,y1,x2,y2){
     context.beginPath();
-    context.fillStyle = 'black'
-    context.moveTo(x1,y1)
-    context.lineWidth = 6
-    context.lineTo(x2,y2)
+    // context.fillStyle = 'black'
+    context.moveTo(x1,y1) //起点
+    context.lineWidth = lineWidth
+    context.lineTo(x2,y2) //终点
     context.stroke()
     context.closePath()
 }

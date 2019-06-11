@@ -1,5 +1,8 @@
+ul,ol, a{list-style: none;}
+*{margin: 0;padding: 0;}
 body{
     margin: 0;
+    overflow: hidden;
 }
 .icon {
     width: 1em; height: 1em;
@@ -8,8 +11,11 @@ body{
     overflow: hidden;
 }
 #huabu{
-    /* background: green; */
-    position: relative;
+    display: block;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .actions{
     position: fixed;
@@ -27,4 +33,51 @@ body{
     fill: brown;
     transform: scale(1.2);
 
+}
+.colors{
+    position: fixed;
+    top: 48px;
+    left: 20px;
+}
+.colors > li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    margin: 10px 0;
+    transition: all 0.3s;
+}
+.colors > li.black{
+    background: black;
+}
+.colors > li.red{
+    background: red;
+}
+.colors > li.yellowgreen{
+    background: yellowgreen;
+}
+.colors > li.blue{
+    background: blue;
+}
+.colors > li.active{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+    transform: scale(1.2);
+}
+.size{
+    position: fixed;
+    right: 16px;
+    top: 48px;
+}
+.size > li{
+    margin: 20px 0;
+}
+.size > li.thin{
+    height: 0;
+    width: 24px;
+    border-top: 3px solid black;
+}
+.size > li.thick{
+    height: 0;
+    width: 24px;
+    border-top: 8px solid black;
 }
