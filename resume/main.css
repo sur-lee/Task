@@ -33,6 +33,15 @@ ul,ol{
     top: 0px;
     left: 0px;
     width: 100%;
+    color: #b7b7b7;
+    transition: all 0.6s;
+}
+.topNavBar.sticky{
+    background: #fff;
+    padding: 10px 18px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #3d4451;
 }
 .topNavBar-inner{
     padding: 0px 24px 0px 4px;
@@ -56,7 +65,7 @@ ul,ol{
 }
 .topNavBar nav>ul>li>a{
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: inherit;
     border-bottom: 3px solid transparent;
     border-top: 3px solid transparent;
     padding: 5px 0px;
@@ -75,7 +84,7 @@ ul,ol{
     color: #27A79A;
 }
 .topNavBar .logo .card{
-    color: rgba(255, 255, 255, 0.7);
+    color: #b7b7b7;
     margin-left: 4px;
 }
 
