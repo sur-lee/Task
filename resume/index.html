@@ -87,15 +87,39 @@
             <a class="logo" href="#" alt='logo'>
                 <span class="rs">RS</span><span class="card">card</span>
             </a>
-            <nav>
+            <nav class="menu">
                 <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其它</a></li>
+                    <li>
+                        <a href="#siteAbout">关于</a>
+                    </li>
+                    <li>
+                        <a href="#siteSkills">技能</a>
+                    </li>
+                    <li>
+                        <a href="#siteWork">作品</a>
+                            <ul class="submenu">
+                                <li>作品1</li>
+                                <li>作品标题</li>
+                                <li>作品3</li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                            <ul class="submenu">
+                                <li>博客1</li>
+                                <li>博客2</li>
+                                <li>博客3</li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="#">日历</a>
+                    </li>
+                    <li>
+                        <a href="#">联系方式</a>
+                    </li>
+                    <li>
+                        <a href="#">其它</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -104,7 +128,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div class="userCard">
+        <div id="siteAbout" class="userCard">
             <div class="profile clearfix">
                 <div class="picture">
                     <img src="./image/avatar.jpg" width="296px" height="318" alt="头像">
@@ -160,7 +184,7 @@
             Only to avoid leaving more regrets.
         </p>
     </main>
-    <section class="skills">
+    <section id="siteSkills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -213,7 +237,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio">
+    <section id="siteWork" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -257,6 +281,27 @@
                 topNavBar.classList.add('sticky')
             }else{
                 topNavBar.classList.remove('sticky')
+            }
+        }
+
+        let liTags = document.querySelectorAll('nav.menu > ul > li')
+        for(let i=0; i<liTags.length; i++){
+            liTags[i].onmouseenter = function(x){
+                x.currentTarget.classList.add('active')
+            }
+            liTags[i].onmouseleave = function(x){
+                x.currentTarget.classList.remove('active')
+            }
+        }
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        for(let i = 0; i<aTags.length; i++){
+            aTags[i].onclick = function(x){
+                x.preventDefault()
+                let a = x.currentTarget
+                let href = a.getAttribute('href')
+                let element = document.querySelector(href)
+                let top = element.offsetTop
+                window.scrollTo(0 , top - 80)
             }
         }
     </script>
