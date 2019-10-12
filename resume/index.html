@@ -301,7 +301,23 @@
                 let href = a.getAttribute('href')
                 let element = document.querySelector(href)
                 let top = element.offsetTop
-                window.scrollTo(0 , top - 80)
+                
+                let n = 30 //一共移动多少次
+                let T = 400 //动画持续时间
+                let t = T / n //每一次移动所需时间
+                let currentTop = window.scrollY
+                let targetTop = top - 80
+                let S = targetTop - currentTop
+                let s = S / n
+                let i = 0
+                let id = setInterval(() => {
+                    if(i===n){
+                        window.clearInterval(id)
+                        return
+                    }
+                    i = i + 1
+                    window.scrollTo(0, currentTop + s*i)
+                }, t);
             }
         }
     </script>
