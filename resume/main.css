@@ -27,6 +27,22 @@ ul,ol{
     clear: both;
 }
 
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+@keyframes slideUp{
+    0%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 .topNavBar{
     padding: 18px;
     position: fixed;
@@ -73,7 +89,8 @@ ul,ol{
     display: block;
     position: relative;
 }
-.topNavBar nav>ul>li.active>a::after{
+.topNavBar nav>ul>li.active>a::after,
+.topNavBar nav>ul>li.highlight>a::after{
     content: '';
     display: block;
     position: absolute;
@@ -261,7 +278,7 @@ section.portfolio{
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 80px;
     /* border: #27A79A 1px solid; */
 }
 section.skills h2,
@@ -298,12 +315,18 @@ section.skills .progressBar{
     background: #d4edeb;
     border-radius: 3px;
     margin: 4px 0 40px;
+    overflow: hidden;
 }
 section.skills .progressBar .progress{
     height: 100%;
     background: #27A79A;
-    width:70%;
+    /* width:70%; */
     border-radius: 3px;
+    transform: translateX(0);
+    transition: all 1s;
+}
+section.skills.offset .progress{
+    transform: translateX(-100%);
 }
 
 section.portfolio{
