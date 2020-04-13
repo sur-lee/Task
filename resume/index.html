@@ -307,7 +307,6 @@
             let id = specialTags[minIndex].id
             let a = document.querySelector('a[href="#' + id + '"]')
             let li = a.parentNode
-            console.log(li)
             let brothersAndMe = li.parentNode.children
             for(i = 0; i < brothersAndMe.length; i++){
                 brothersAndMe[i].classList.remove('highlight')
