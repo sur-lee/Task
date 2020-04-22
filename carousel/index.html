@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <title>Carousel</title>
+  <style>
+    .window {
+      width: 300px;
+      overflow: hidden;
+    }
+    .images {
+      display: flex;
+      align-items: flex-start;
+      transition: all .5s;
+    }
+    .images > img {
+      vertical-align: top;
+    }
+    .red {
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="window">
+    <div class="images" id="images">
+      <img src="https://img.huffingtonpost.com/asset/5dcc613f1f00009304dee539.jpeg?cache=QaTFuOj2IM&ops=crop_834_777_4651_2994%2Cscalefit_720_noupscale" alt="1" width="300px" height="200px">
+      <img src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg?w=590&h=800&92807D47-9808-491E-A6A70445BEF5521E" alt="2" width="300px" height="200px">
+      <img src="https://a57.foxnews.com/cf-images.us-east-1.prod.boltdns.net/v1/static/694940094001/7000e3d0-0588-446d-aa0b-d7583295525a/39be9414-c33f-4463-8fda-1dfceba4aee6/1280x720/match/931/524/image.jpg?ve=1&tl=1" alt="3" width="300px" height="200px">
+      <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/cat-sitting-on-couch-100318-image-600w-400h-d" alt="4" width="300px" height="200px">
+    </div>
+    <span id="buttons">
+      <span>第1张</span>
+      <span>第2张</span>
+      <span>第3张</span>
+      <span>第4张</span>
+    </span>
+  </div>
+  <script>
+    var allButtons = $('#buttons > span')
+
+//点击轮播
+    for(let i = 0; i < allButtons.length; i++) {
+      $(allButtons[i]).on('click', function(x) {
+        console.log('hi')
+        var index = $(x.currentTarget).index()
+        var p = index * -300
+        $('#images').css({
+          transform: 'translate(' + p + 'px)'
+        })
+        n = index
+        activeButton(allButtons.eq(n))
+      })
+    }
+
+//自动轮播
+    var n = 0;
+    var size = allButtons.length
+    allButtons.eq(n % size).trigger('click')
+
+    var timerId = setTimer()
+
+    function setTimer() {
+      return setInterval(() => {
+        n += 1
+        allButtons.eq(n % size).trigger('click')
+      }, 2000)
+    }
+
+    function activeButton($button) {
+      $button.addClass('red').siblings('.red').removeClass('red')
+    }
+    $('.window').on('mouseenter', function() {
+      window.clearInterval(timerId)
+    })
+
+    $('.window').on('mouseleave', function() {
+      timerId = setTimer()
+    })
+  </script>
+</body>
+</html>
