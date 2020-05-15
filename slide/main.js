@@ -34,15 +34,12 @@ function 初始化(){
   $(`.images > img:nth-child(${n})`).addClass('current').siblings().addClass('enter')
 }
 function makeCurrent($node){
-  $node.removeClass('enter leave').addClass('current')
-  return $node
+  return $node.removeClass('enter leave').addClass('current')
 }
 function makeEnter($node){
-  $node.removeClass('current leave').addClass('enter')
-  return $node
+  return $node.removeClass('current leave').addClass('enter')
 }
 function makeLeave($node){
-  $node.removeClass('current enter').addClass('leave')
-  return $node
+  return $node.removeClass('current enter').addClass('leave')
 }
 
