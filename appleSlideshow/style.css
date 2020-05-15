@@ -1,0 +1,73 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+ul,li{list-style: none; margin: 0; padding: 0;}
+.clearfix::after{content: ''; display: block; clear: both;}
+
+body{
+  color: #333;
+  background: #f2f2f2;
+}
+#main{
+  margin: 20px auto;
+  text-align: center;
+  width: 920px;
+  position: relative;
+
+}
+h1{
+  font-family: "Myriad Pro",Arial,Helvetica,sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  padding: 35px;
+}
+#gallery{
+  box-shadow: 0 0 3px #aaa;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 1px solid white;
+  background: url(./images/panel.jpg) repeat-x bottom center #fff;
+  width: 920px;
+  overflow: hidden;
+}
+
+#slides{
+  width: 3680px;
+  height: 400px;
+  overflow: hidden;
+  transition: all .5s;
+}
+.slide{
+  float:left;
+}
+.slide img{
+  display: block;
+}
+
+#menu{
+  height: 45px;
+}
+/* 解决inline-block出现边距 */
+ul{
+  font-size: 0;
+}
+li{
+  width: 60px;
+  height: 45px;
+  display: inline-block;
+  overflow: hidden;
+}
+li a{
+  display: block;
+  background: url(./images/divider.png) no-repeat right;
+  height: 45px;
+  padding-top: 10px;
+}
+li.inact:hover{
+  background: url(./images/pic_bg.png) repeat;
+}
+li.act,li.act:hover{
+  background: url(./images/active_bg.png) no-repeat;
+}
+.fbar{
+  width: 2px;
+  background: url(./images/divider.png) no-repeat right;
+}
