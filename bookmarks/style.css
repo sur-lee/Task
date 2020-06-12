@@ -43,13 +43,28 @@ main{
     color: #fafafa;
     font-size: 22px;
     font-family: Helvetica; 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 }
 .row{
     margin: 16px 0;
 }
 .row .key{
     margin: 0 8px;
+}
+.key img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+}
+.key .text {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+}
+.key button {
+    position: absolute;
+    bottom: 8px;
+    right: 4px;
 }
