@@ -5,19 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> 
     <!-- <link rel="stylesheet" href="./loading.css"> -->
     <script src="//at.alicdn.com/t/font_1094467_foaohx3uxkr.js"></script>
     <style type="text/css">
-        .swiper-container {
-            width: 600px;
-            height: 300px;
-        }
-        .swiper-slide {
-            background: #fff;
-        }
-
         .icon {
             width: 1em;
             height: 1em;
@@ -137,24 +129,6 @@
         <div class="mask"></div>
     </div>
     <main>
-        <!-- Slider main container -->
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                ...
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-        </div>
         <div data-x id="siteAbout" class="userCard">
             <div class="profile clearfix">
                 <div class="picture">
@@ -266,37 +240,17 @@
     </section>
     <section data-x id="siteWork" class="portfolio">
         <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                <li id="portfolio1">所有</li>
-                <li id="portfolio2">框架</li>
-                <li id="portfolio3">原生JS&amp; CSS</li>
-            </ol>
-            <div id="portfolioBar" class="bar state-1">
-                <div class="bar-inner"></div>
+        <!-- 轮播图 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <img src="./image/nav-pages.jpg" class="swiper-slide">
+                <img src="./image/canvas.jpg" class="swiper-slide">
+                <img src="./image/apple-style-slides.jpg" class="swiper-slide">
             </div>
-        </nav>
-        <script>
-            portfolio1.onclick = function () {
-                portfolioBar.className = 'bar state-1'
-            }
-            portfolio2.onclick = function () {
-                portfolioBar.className = 'bar state-2'
-            }
-            portfolio3.onclick = function () {
-                portfolioBar.className = 'bar state-3'
-            }
-        </script>
-        <div class="works" style="height: 576px; margin-bottom: 120px;">
-            <div class="big" style="top: 0; left: 0;">
-                <img src="./image/1.jpg" alt="">
-            </div>
-            <div class="small" style="top: 0; left: 624px;">
-                <img src="./image/2.jpg" alt="">
-            </div>
-            <div class="small" style="top: 298px; left: 624px;">
-                <img src="./image/3.jpg" alt="">
-            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
         </div>
     </section>
     <script src="TWEEN.js"></script>
