@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> 
     <!-- <link rel="stylesheet" href="./loading.css"> -->
     <script src="//at.alicdn.com/t/font_1094467_foaohx3uxkr.js"></script>
     <style type="text/css">
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+        .swiper-slide {
+            background: #fff;
+        }
+
         .icon {
             width: 1em;
             height: 1em;
@@ -128,6 +137,24 @@
         <div class="mask"></div>
     </div>
     <main>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
         <div data-x id="siteAbout" class="userCard">
             <div class="profile clearfix">
                 <div class="picture">
@@ -273,6 +300,26 @@
         </div>
     </section>
     <script src="TWEEN.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+          // Optional parameters
+          loop: true,
+      
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+      
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+      
+        })
+    </script>
+
     <script>
         setTimeout(function(){
             loadingWrapper.classList.remove('active')
