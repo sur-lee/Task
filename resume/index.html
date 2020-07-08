@@ -5,17 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./main.css">
-    <!-- <link rel="stylesheet" href="./loading.css"> -->
     <script src="//at.alicdn.com/t/font_1094467_foaohx3uxkr.js"></script>
     <style type="text/css">
-        .swiper-container {
-            width: 600px;
-            height: 300px;
-        }
-        .swiper-slide {
-            background: #fff;
-        }
 
         .icon {
             width: 1em;
@@ -23,64 +16,6 @@
             vertical-align: -0.15em;
             fill: currentColor;
             overflow: hidden;
-        }
-
-        .loading-wrapper {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgb(220, 220, 223);
-            z-index: 1;
-            /* display: flex; */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .loading-wrapper.active {
-            display: flex;
-        }
-
-        .loading {
-            width: 200px;
-            height: 200px;
-            position: relative;
-        }
-
-        .loading::before,
-        .loading::after {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #27A79A;
-            border-radius: 50%;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            animation: s 1.2s linear infinite;
-        }
-
-        .loading::after {
-            animation-delay: 0.6s;
-        }
-
-        @keyframes s {
-            0% {
-                width: 0;
-                height: 0;
-                opacity: 1;
-            }
-
-            100% {
-                width: 100px;
-                height: 100px;
-                opacity: 0;
-            }
         }
     </style>
     <title>我的网页</title>
@@ -268,20 +203,26 @@
                 portfolioBar.className = 'bar state-3'
             }
         </script>
-        <div class="works" style="height: 576px; margin-bottom: 120px;">
-            <div class="big" style="top: 0; left: 0;">
-                <img src="./image/1.jpg" alt="">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img src="./image/bookmarks.png" class="swiper-slide">
+                <img src="./image/canvas.png" class="swiper-slide">
+                <img src="./image/appleslideshow.png" class="swiper-slide">
             </div>
-            <div class="small" style="top: 0; left: 624px;">
-                <img src="./image/2.jpg" alt="">
-            </div>
-            <div class="small" style="top: 298px; left: 624px;">
-                <img src="./image/3.jpg" alt="">
-            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
         </div>
     </section>
     <script src="TWEEN.js"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var mySwiper = new Swiper ('.swiper-container', {
           // Optional parameters
