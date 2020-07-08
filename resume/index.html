@@ -5,10 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> 
     <!-- <link rel="stylesheet" href="./loading.css"> -->
     <script src="//at.alicdn.com/t/font_1094467_foaohx3uxkr.js"></script>
+<<<<<<< HEAD
+=======
+    <style type="text/css">
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+        .swiper-slide {
+            background: #fff;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .loading-wrapper {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(220, 220, 223);
+            z-index: 1;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-wrapper.active {
+            display: flex;
+        }
+
+        .loading {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .loading::before,
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #27A79A;
+            border-radius: 50%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            animation: s 1.2s linear infinite;
+        }
+
+        .loading::after {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes s {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+
+            100% {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
+    </style>
+>>>>>>> parent of ef59f68... 添加作品轮播
     <title>我的网页</title>
 </head>
 
@@ -59,7 +137,29 @@
         <div class="mask"></div>
     </div>
     <main>
+<<<<<<< HEAD
         <div id="siteAbout" class="userCard">
+=======
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+        <div data-x id="siteAbout" class="userCard">
+>>>>>>> parent of ef59f68... 添加作品轮播
             <div class="profile clearfix">
                 <div class="picture">
                     <img src="./image/avatar.jpg" width="296px" height="318" alt="头像">
@@ -170,17 +270,37 @@
     </section>
     <section data-x id="siteWork" class="portfolio">
         <h2>作品集</h2>
-        <!-- 轮播图 -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <img src="./image/nav-pages.jpg" class="swiper-slide">
-                <img src="./image/canvas.jpg" class="swiper-slide">
-                <img src="./image/apple-style-slides.jpg" class="swiper-slide">
+        <nav>
+            <ol class="clearfix">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">原生JS&amp; CSS</li>
+            </ol>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
+        </nav>
+        <script>
+            portfolio1.onclick = function () {
+                portfolioBar.className = 'bar state-1'
+            }
+            portfolio2.onclick = function () {
+                portfolioBar.className = 'bar state-2'
+            }
+            portfolio3.onclick = function () {
+                portfolioBar.className = 'bar state-3'
+            }
+        </script>
+        <div class="works" style="height: 576px; margin-bottom: 120px;">
+            <div class="big" style="top: 0; left: 0;">
+                <img src="./image/1.jpg" alt="">
+            </div>
+            <div class="small" style="top: 0; left: 624px;">
+                <img src="./image/2.jpg" alt="">
+            </div>
+            <div class="small" style="top: 298px; left: 624px;">
+                <img src="./image/3.jpg" alt="">
+            </div>
         </div>
     </section>
     <script src="TWEEN.js"></script>

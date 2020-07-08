@@ -321,26 +321,53 @@ section.skills.offset .progress{
 
 section.portfolio{
     text-align: center;
-    margin-bottom: 40px;
 }
-section.portfolio .swiper-container{
-    width: 940px;
+section.portfolio > nav{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
 }
-section.portfolio .swiper-button-prev{
-    background-color: rgba(0, 0, 0, .2);
-    padding: 10px;
-    color: white;
+section.portfolio > nav > ol{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
 }
-section.portfolio .swiper-button-prev:root{
-    --swiper-navigation-size: 20px;
+section.portfolio > nav > ol > li{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
 }
-section.portfolio .swiper-button-next{
-    background-color: rgba(0, 0, 0, .2);
-    padding: 10px;
-    color: white;
+section.portfolio > nav > ol > li:nth-child(1){
+    margin-left: 0;
+}
+section.portfolio > nav > .bar{
+    /* border: #27A79A 1px solid; */
+    height: 5px;
+    background: #fff;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+section.portfolio > nav .bar-inner{
+    height: 100%;
+    background: #27A79A;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+section.portfolio > nav .bar.state-1 .bar-inner{
+    margin-left: 0;
+    width: 32px;
+}
+section.portfolio > nav .bar.state-2 .bar-inner{
+    margin-left: 72px;
+    width: 32px;
+}
+section.portfolio > nav .bar.state-3 .bar-inner{
+    margin-left: 143px;
+    width: 100px;
 }
 section.portfolio .works{
     position: relative;
+    /* border: #27A79A 1px solid; */
 }
 section.portfolio .works > .big,
 section.portfolio .works > .small{
