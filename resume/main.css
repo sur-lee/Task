@@ -379,3 +379,8 @@ section.portfolio .swiper-button-next{
     color: seashell;
     border-radius: 2px;
 }
+
+section.postMessage{
+    width: 940px;
+    margin: 100px auto;
+}
